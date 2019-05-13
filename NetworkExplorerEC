@@ -1,0 +1,21 @@
+#!/bin/bash
+
+IPADDR=`hostname -I`
+LASTIP=`echo $IPADDR | cut -c 1`
+echo $LASTIP
+NUMIP=${IPADDR##$LASTIP*.}
+ENDIP=${IPADDR%$NUMIP}
+echo $ENDIP
+ 
+num=1
+until [ num -gt 255]
+	do 
+		modifiedIP="$ENDIP$num"
+		(num++)
+	if ping -c 1 -W 1 "$modifiedIP" > /dev/null 2>&1; then 
+	echo "$modifiedIP : up"
+	else
+	echo "$modifiedIP : down"
+	fi
+done
+
