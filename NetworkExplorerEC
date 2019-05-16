@@ -28,8 +28,8 @@ until [ $num -gt 255 ]
 	else
 	echo "Port 80: Failure"
 	fi
+        echo " "
 	fi
-	echo ""
 	((num++))
 	
 done
