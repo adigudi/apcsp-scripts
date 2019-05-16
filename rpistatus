@@ -1,4 +1,5 @@
 #!/bin/bash
+<<<<<<< HEAD
 
 echo "Which Pi would you like to check?"
 read input
@@ -18,10 +19,44 @@ else
                 else
                         echo "rpi$i : dead"
                 fi
+=======
+echo "What rpi would you like to ping?"
+read varrpi
+if [ "$varrpi" == "" ];then
+for i in 01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 16 17 18 19 20
+do
+        ping -c 1 -W 1 "rpi$i"  > /dev/null 2>&1;
+        if [ $? -eq 0 ]; then
+           echo "rpi$i : alive"
+        else
+           echo "rpi$i : dead"
+        fi
+done
+
+else
+	ping -c 1 -W 1 "$varrpi"  > /dev/null 2>&1;
+	if [ $? -eq 0 ]; then
+	   echo "$varrpi : alive"
+	else
+	   echo "$varrpi : dead"
+	fi
+>>>>>>> 6a73061381388723201effe41b30d82556e98086
 fi
 
 
 
 
 
+<<<<<<< HEAD
 			
+=======
+
+
+
+
+
+
+
+
+
+>>>>>>> 6a73061381388723201effe41b30d82556e98086

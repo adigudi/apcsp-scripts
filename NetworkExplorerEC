@@ -31,6 +31,5 @@ until [ $num -gt 255 ]
         echo " "
 	fi
 	((num++))
-	
 done
 
